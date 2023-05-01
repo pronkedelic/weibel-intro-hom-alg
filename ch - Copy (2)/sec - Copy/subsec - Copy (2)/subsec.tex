@@ -1,0 +1,20 @@
+\subsection{zin3724}
+\[ 
+\begin{tikzcd}
+    G_1C \arrow[r, "\delta"] \arrow[d] & G_0A \arrow[r, "G_0f"] \arrow[d, "\alpha_A"] & G_0B \arrow[r] \arrow[d, "\alpha_B"] & G_0C \arrow[r] \arrow[d, "\alpha_C"] & 0 \arrow[d, "0"] \\
+    0 \arrow[r, "\delta"]              & FA \arrow[r, "Ff"]                         & FB \arrow[r]                         & FC \arrow[r]                         & 0               
+    \end{tikzcd}
+\]
+
+Let $G$ be a covariant $\delta$-functor, and suppose there is a natural transformation $\alpha$ from $G_0$ to $F$. Since $F$ is exact, the map $FA\xra{Ff}FB$ is mono, so \[Ff\circ\alpha_A\circ\delta=0\Lra\alpha_A\circ\delta=0\]
+
+By commutativity of the second square, $Ff\circ\alpha_A\circ\delta=\alpha_B\circ G_0f\circ\delta$, and by exactness of the top row, $\alpha_B\circ G_0f\circ\delta=\alpha_B\circ0=0$, so the first square commutes.
+
+To see that $\alpha$ extends to commute with all $\delta_n$'s,
+\[
+\begin{tikzcd}
+    G_nC \arrow[r, "\delta"] \arrow[d] & G_{n-1}A \arrow[r, "G_{n-1}f"] \arrow[d, "\alpha_A"] & G_{n-1}B \arrow[r] \arrow[d, "\alpha_B"] & G_{n-1}C \arrow[r] \arrow[d, "\alpha_C"] & G_{n-2}A \arrow[d, "0"] \\
+    0 \arrow[r, "\delta"]              & 0 \arrow[r]                                          & 0 \arrow[r]                              & 0 \arrow[r]                              & 0                      
+    \end{tikzcd}
+\]
+Note that the first square has a bottom row of 0's.

@@ -1,0 +1,14 @@
+\subsection{zin3724}
+According to Prop 9.4 in \cite{Awodey_2010}, the paragraph above (Application 2.6.7 in \cite{Weibel_1995}) is sufficient and necessary for $\operatorname{colim}$ to be left adjoint to $\Delta$.
+
+Now, in the category $\mathbf{Ab}$, consider
+\[\begin{xy}
+        \xymatrix{
+    0 \ar@{->}[r] & \mathbb Z/2 \ar@{->}[r]^{=} & \mathbb Z/2 \ar@{->}[r] & 0 \ar@{->}[r] & 0 \\
+    0 \ar@{->}[r] & 0 \ar@{->}[u] \ar@{->}[d] \ar@{->}[r] & \mathbb Z/4 \ar@{->}[d]^{\mod 2} \ar@{->}[u]^{\mod 2} \ar@{->}[r]^{=} & \mathbb Z/4 \ar@{->}[d] \ar@{->}[u] \ar@{->}[r] & 0 \\
+    0 \ar@{->}[r] & \mathbb Z/2 \ar@{->}[r]^{=} & \mathbb Z/2 \ar@{->}[r] & 0 \ar@{->}[r] & 0
+    }
+    \end{xy}\]
+under pushout (regarded as a special case of $\operatorname{colim}$ with $I=\bullet\leftarrow\bullet\ra\bullet$), which gives
+\[0\longrightarrow\bZ/2\oplus\bZ/2\longrightarrow\bZ/2\longrightarrow0\longrightarrow0\]
+but no matter what the arrows are, it can't possibly be left exact.

@@ -1,0 +1,30 @@
+\subsection{zin3724} \label{ex2.2.1}
+Let $P$ be a projective object in $\mathbf{Ch}$.
+
+Consider the exact sequence $A\xra{f} B\ra 0\in\mathbf{Ch}$ such that they're zero everywhere except in the $n$th place. By the projectivity of $P$, we have for $P_n$ and any $P_n\xra{h}B_n$, that there exists $P_n\xra{g}A_n$ such that $h=f\circ g$
+\[\begin{tikzcd}
+    & P_n \arrow[d, "h"'] \arrow[ld, "g"', dashed] &   \\
+A_n \arrow[r, "f"'] & B_n \arrow[r]                                  & 0
+\end{tikzcd}\]
+since $A_n$ and $B_n$ are arbitrary, $P_n$ must itself be a projective object. This applies to all $n\in\bN$, so $P$ is a complex of projectives.
+
+Now, we know from \ref{ex1.5.1} that $\operatorname{cone}(\id_P)$ is split exact, and furthermore, $\operatorname{cone}(\id_P)$ decomposes as $P\oplus P[-1]$ with $i$ the usual inclusion, and $j$ the usual projection (keep in mind that the differential in $P[k]$ is $(-1)^k\partial_P$)
+\[\xymatrix{
+    0 \ar@{->}[r] & P \ar@{->}[r]^{i} & \operatorname{cone}(\operatorname{id}_P) \ar@{->}[r]^{j} \ar@{=}[d] & P[-1] \ar@{->}[r] & 0 \\
+     &  & P\oplus P[-1] &  & 
+    }\]
+By the splitting lemma, there exists $\operatorname{cone}(\id_P)\xra{p}P$ such that $p\circ i=\id_P$, and combined with the fact that $H_n$ is functorial for all $n$, it follows that $P$ is exact.
+
+Now, note that $i$ and $p$ are morphisms in $\mathbf{Ch}$, so they commute with the differentials.
+\[\begin{tikzcd}
+    \cdots \arrow[r, "\partial_P"]                             & P_{n+1} \arrow[r, "\partial_P"] \arrow[d, "i", shift left]                                                                                    & P_n \arrow[r, "\partial_P"] \arrow[d, "i", shift left]                                                                                        & P_{n-1} \arrow[r, "\partial_P"] \arrow[d, "i", shift left]                                                                                        & \cdots                                              \\
+    \cdots \arrow[r, "{\partial_{P\oplus P[-1]}}", shift left] & P_{n+1}\oplus P_n \arrow[r, "{\partial_{P\oplus P[-1]}}", shift left] \arrow[u, "p", shift left] \arrow[l, "{s_{P\oplus P[-1]}}", shift left] & P_n\oplus P_{n-1} \arrow[r, "{\partial_{P\oplus P[-1]}}", shift left] \arrow[u, "p", shift left] \arrow[l, "{s_{P\oplus P[-1]}}", shift left] & P_{n-1}\oplus P_{n-2} \arrow[r, "{\partial_{P\oplus P[-1]}}", shift left] \arrow[u, "p", shift left] \arrow[l, "{s_{P\oplus P[-1]}}", shift left] & \cdots \arrow[l, "{s_{P\oplus P[-1]}}", shift left]
+    \end{tikzcd}\]
+Since $P\oplus P[-1]$ is split with $s_{P\oplus P[-1]}$ the splitting map, we know that
+\[\partial_Pps_{P\oplus P[-1]}i\partial_P\]
+\[=\partial_Pps_{P\oplus P[-1]}\partial_{P\oplus P[-1]}i\]
+\[=p\partial_{P\oplus P[-1]}s_{P\oplus P[-1]}\partial_{P\oplus P[-1]}i\]
+\[=p\partial_{P\oplus P[-1]}i=\partial_P\]
+so $P$ is split with the splitting map $ps_{P\oplus P[-1]}i$.
+
+For the converse, see \cite{Ralph_2012}.

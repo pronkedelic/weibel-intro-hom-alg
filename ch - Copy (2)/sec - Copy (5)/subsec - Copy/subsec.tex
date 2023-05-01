@@ -1,0 +1,30 @@
+\subsection{zin3724}
+    \subsubsection{1$\Lra$2}
+        Let $B$ be any object. Then for any exact sequence
+        \[0\ra W\xra{i}X\xra{j}Y\ra0\]
+        the sequence under $\Hom(-,B)$
+        \[0\ra\Hom(Y,B)\xra{j^*}\Hom(X,B)\xra{i^*}\Hom(W,B)\]
+        is exact.
+        \begin{proof}
+            Suppose $h\in\ker(i^*)$, then $hi=0$, so $0\ra\im(i)\ra\ker(h)$ is exact. But $\im(i)=\ker(j)$ by our assumptions, so by the first isomorphism theorem, $h$ factors through $j$, hence $h\in\im(j^*)$, and $0\ra\ker(i^*)\ra\im(j^*)$ is exact. The exactness of $0\ra\im(j^*)\ra\ker(i^*)$ follows immediately from $ji=0$.
+
+            By assumptions, $j$ is epic, so $fj=0\Ra f=0$ and it follows that $\ker(j^*)=0$.
+        \end{proof}
+        To prove that $\Hom(-,B)$ is exact when $B$ is injective, note that for any $W\xra{f}B$, it factors through $W\xra{i}X$, therefore $\im(i^*)=\Hom(W,B)$ and $\Hom(-,B)$ is right-exact in addition to being left-exact.
+
+        Conversely, if $B$ is \emph{not} injective, then there exists some $f\in\Hom(W,B)$ that does not factor through $i$, so $i^*$ would not be surjective.
+    \subsubsection{1$\Ra$3, note that 3$\Ra$4 is trivial}
+        $\Ext^i(A,B)=R^i\Hom(A,-)(B)$, and since $B$ is injective, $0\ra B\xra{\id_B}B\ra 0$ is an injective resolution. Functors preserve identity maps by definition, so
+        \[0\ra\Hom(A,B)\xra{\id_{\Hom(A,B)}}\Hom(A,B)\ra0\]
+        is exact, hence $R^i\Hom(A,-)(B)$, the $i$-th cohomology of the above, is 0. $A$ and $i$ were arbitrary, so $\Ext^i(A,B)=0$ for all $A$ and all $i\ne0$.
+    \subsubsection{4$\Ra$2} \label{ex2.5.1}
+        Since $\Ext^\bullet$ is a $\delta$-functor, for any exact sequence $0\ra W\ra X\ra Y\ra0$, we have the long exact sequence
+        \[\begin{xy}
+            %https://darknmt.github.io/res/xypic-editor/#eyJub2RlcyI6W3sicG9zaXRpb24iOlswLDBdLCJ2YWx1ZSI6IjAifSx7InBvc2l0aW9uIjpbMSwwXSwidmFsdWUiOiJcXG9wZXJhdG9ybmFtZXtIb219KFksQikifSx7InBvc2l0aW9uIjpbMiwwXSwidmFsdWUiOiJcXG9wZXJhdG9ybmFtZXtIb219KFgsQikifSx7InBvc2l0aW9uIjpbMywwXSwidmFsdWUiOiJcXG9wZXJhdG9ybmFtZXtIb219KFcsQikifSx7InBvc2l0aW9uIjpbMSwxXSwidmFsdWUiOiJcXG9wZXJhdG9ybmFtZXtFeHR9XjEoWSxCKSJ9LHsicG9zaXRpb24iOlsyLDFdLCJ2YWx1ZSI6Ilxcb3BlcmF0b3JuYW1le0V4dH1eMShYLEIpIn0seyJwb3NpdGlvbiI6WzMsMV0sInZhbHVlIjoiXFxvcGVyYXRvcm5hbWV7RXh0fV4xKFcsQikifSx7InBvc2l0aW9uIjpbMSwyXSwidmFsdWUiOiJcXGNkb3RzIn1dLCJlZGdlcyI6W3siZnJvbSI6MCwidG8iOjF9LHsiZnJvbSI6MSwidG8iOjJ9LHsiZnJvbSI6MiwidG8iOjN9LHsiZnJvbSI6MywidG8iOjR9LHsiZnJvbSI6NCwidG8iOjV9LHsiZnJvbSI6NSwidG8iOjZ9LHsiZnJvbSI6NiwidG8iOjd9XX0=
+            \xymatrix{
+        0 \ar@{->}[r] & \operatorname{Hom}(Y,B) \ar@{->}[r] & \operatorname{Hom}(X,B) \ar@{->}[r] & \operatorname{Hom}(W,B) \ar@{->}[lld] \\
+        & \operatorname{Ext}^1(Y,B) \ar@{->}[r] & \operatorname{Ext}^1(X,B) \ar@{->}[r] & \operatorname{Ext}^1(W,B) \ar@{->}[lld] \\
+        & \cdots &  & 
+        }
+        \end{xy}\]
+        and by assumption, $\Ext^1(Y,B)=\Ext^1(X,B)=\Ext^1(W,B)=0$, so $\Hom(-,B)$ is exact because it maps the SES to an SES.

@@ -1,0 +1,15 @@
+\subsection{zin3724}
+The quasi-isomorphism is a thing that makes
+\[
+\begin{tikzcd}
+    \cdots \arrow[r] & P_2 \arrow[d] \arrow[r] & P_1 \arrow[d] \arrow[r] & P_0 \arrow[d,"\epsilon"] \arrow[r] & 0 \arrow[r] \arrow[d] & \cdots \\
+    \cdots \arrow[r] & 0 \arrow[r]             & 0 \arrow[r]             & M \arrow[r]             & 0 \arrow[r]           & \cdots
+    \end{tikzcd}
+\]
+commute, and induces an isomorphism of the homology groups, which is the same thing as
+\[
+\begin{tikzcd}
+    \cdots \arrow[r] & P_2 \arrow[r] & P_1 \arrow[r] & P_0 \arrow[r,"\epsilon"] & M \arrow[r] & 0 \arrow[r] & \cdots
+    \end{tikzcd}
+\]
+being exact; the commutativity of the middle square means that the above is a chain complex. The quasi-isomorphism induced by $\epsilon$ at $i=0$ means that $P_0/\partial(P_1)\cong M$, hence $\im(\partial_1^P)=\ker(\epsilon)$, and the complex above is exact.

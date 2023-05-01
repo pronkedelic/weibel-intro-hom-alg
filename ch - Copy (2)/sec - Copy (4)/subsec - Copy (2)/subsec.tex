@@ -1,0 +1,22 @@
+\subsection{zin3724}
+Let $P$ be a projective resolution of $A$. Since $U$ is exact, it preserves $\ker$ and $\coker$ (i.e. $U\ker=\ker U$, and $U\coker=\coker U$), because for every $f:X\ra Y$, it preserves the exactness of
+\[0\longrightarrow\ker f\longrightarrow A\xrightarrow{f}B\longrightarrow\coker f\longrightarrow0\]
+(note that exact sequence suffice to characterise $\ker$ and $\coker$ in abelian categories). Since $\im(f)=\ker\coker f$, $U$ preserves them too.
+
+Now, for any functor $F$, $L_iF(A)$ is defined with short exact sequences involving $\ker$ and $\im$, like so
+\[
+    \begin{tikzcd}
+        &                                                          &                                                      & 0                                            & 0       \\
+        &                                                          &                                                      &                                              &         \\
+        &                                                          & H_{i+1}(FP)=L_{i+1}F(A) \arrow[ruu]                  & H_i(FP)=L_iF(A) \arrow[ruu]                  & \iddots \\
+        & 0 \arrow[d]                                              & 0 \arrow[d]                                          & 0 \arrow[d]                                  &         \\
+        & \ker(F\partial_{i+1}) \arrow[d] \arrow[ruu]              & \ker(F\partial_i) \arrow[d] \arrow[ruu]              & \ker(F\partial_{i-1}) \arrow[d] \arrow[ruu]  &         \\
+\cdots \arrow[r]    & FP_{i+1} \arrow[r, "F\partial_{i+1}"] \arrow[d]          & FP_i \arrow[r, "F\partial_i"] \arrow[d]              & FP_{i-1} \arrow[r] \arrow[d]                 & \cdots  \\
+\iddots \arrow[ruu] & \operatorname{im}(F\partial_{i+1}) \arrow[d] \arrow[ruu] & \operatorname{im}(F\partial_i) \arrow[d] \arrow[ruu] & \operatorname{im}(F\partial_{i-1}) \arrow[d] &         \\
+        & 0                                                        & 0                                                    & 0                                            &         \\
+0 \arrow[ruu]       & 0 \arrow[ruu]                                            &                                                      &                                              &        
+\end{tikzcd}
+\]
+Therefore,
+\[L_iUF(A)=\ker{UF\partial_i}/\im{UF\partial_{i+1}}=U\ker{F\partial_i}/U\im{F\partial_{i+1}}=UL_iF(A)\]
+and since $i$ is arbitrary, it holds for all $i$. To see that the isomorphism is natural, see \cite{Pedro_2018}.
