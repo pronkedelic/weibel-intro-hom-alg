@@ -1,2 +1,15 @@
 \subsection{}
-Since there are only two nonzero columns,
+\xymatrix{
+ & \vdots \ar@{->}[d] & \vdots \ar@{->}[d] &  \\
+\cdots & \bullet \ar@{->}[d] \ar@{->}[l] & \bullet \ar@{->}[d] \ar@{->}[l] & \cdots \ar@{->}[l] \\
+\cdots & E_{p-1,q+1} \ar@{->}[d] \ar@{->}[l] & \bullet \ar@{->}[l] \ar@{->}[d] & \cdots \ar@{->}[l] \\
+\cdots & \bullet \ar@{->}[d] \ar@{->}[l] & E_{p,q} \ar@{->}[l] \ar@{->}[d] & \cdots \ar@{->}[l] \\
+\cdots & \bullet \ar@{->}[d] \ar@{->}[l] & \bullet \ar@{->}[l] \ar@{->}[d] & \cdots \ar@{->}[l] \\
+ & \vdots & \vdots & 
+}
+$\operatorname{Tot}(E)$ refers to the total complex of the zeroth page, with $d=d^h+d^v$ denoting its differential. Consider the linear map 
+\[\phi:E^2_{p-1,q+1}\ra H_{p+q}(T):a\mapsto(a,b)\]
+where $b\in E^0_{p,q}$ is chosen so that $b\in\im(d^v)\cap\ker(d^h)$, and $b$. 
+Now, suppose that $a\in E^0_{p-1,q+1}$ is in the same class as zero on the second page, i.e. $a\in\ker(d^v)$, $\exists a'\in\im(d^v)$ such that $a+a'\in\im(d^h)$, then for any $c\in(d^h)^{-1}(a+a')$, $d^v\circ d^h(c)=d^h\circ d^v(c)=0$. So for its image in $H_{p+q}(T)$, we have
+\[d(\phi(a))=(d^h+d^v)(a,b)=d^h(b)+d^v(a)+d^v(b)=0,\]
+implying that $\phi(a)\in\ker(d)$.
