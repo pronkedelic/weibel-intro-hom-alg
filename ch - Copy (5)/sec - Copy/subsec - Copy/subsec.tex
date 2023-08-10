@@ -7,9 +7,17 @@
 \cdots & \bullet \ar@{->}[d] \ar@{->}[l] & \bullet \ar@{->}[l] \ar@{->}[d] & \cdots \ar@{->}[l] \\
  & \vdots & \vdots & 
 }
-$\operatorname{Tot}(E)$ refers to the total complex of the zeroth page, with $d=d^h+d^v$ denoting its differential. Consider the linear map 
-\[\phi:E^2_{p-1,q+1}\ra H_{p+q}(T):a\mapsto(a,b)\]
-where $b\in E^0_{p,q}$ is chosen so that $b\in\im(d^v)\cap\ker(d^h)$, and $b$. 
-Now, suppose that $a\in E^0_{p-1,q+1}$ is in the same class as zero on the second page, i.e. $a\in\ker(d^v)$, $\exists a'\in\im(d^v)$ such that $a+a'\in\im(d^h)$, then for any $c\in(d^h)^{-1}(a+a')$, $d^v\circ d^h(c)=d^h\circ d^v(c)=0$. So for its image in $H_{p+q}(T)$, we have
-\[d(\phi(a))=(d^h+d^v)(a,b)=d^h(b)+d^v(a)+d^v(b)=0,\]
-implying that $\phi(a)\in\ker(d)$.
+$T=\operatorname{Tot}(E)$ refers to the total complex of the zeroth page, with $d=d^h+d^v$ denoting its differential. Consider the linear map 
+\[\phi:E^2_{p-1,q+1}\ra H_{p+q}(T):a\mapsto(a,0).\]
+
+Suppose that $a\in E^0_{p-1,q+1}$ is in the same class as zero in $E^2_{p-1,q+1}$, i.e. $a\in\ker(d^v)$, $\exists a'\in\im(d^v)$ such that $a+a'\in d^h(\ker(d^v_{p,q+1}))$, because on the page $E^1_{\bullet,\bullet}$, $a=a+a'$ ends up in $\im(d^h_1)$.
+It now follows that there exists $b'\in E^0_{p-1,q+2}$ and $c\in\ker(d^v_{p,q+1})\subset E^0_{p,q+1}$ such that
+\[\phi(a)=(a,0)=((-a')+(a+a'),0)=d^v(b')+d^h(c)+d^v(c),\]
+so $(a,0)\in\im(d)$, hence $\phi(0)=0$, so $\phi$ must be well-defined.
+
+Now, suppose that $\phi(a)=0$, then $(a,0)\in\im(d)$, so there exist $a'\in\im(d^v)$ such that $a-a'\in d^h(\ker(d^v))$. Furthermore, for any $c\in\ker(d^v_{p,q+1})$ such that $d^h(c)=a-a'$, we have
+\[0=d^h\circ d^v(c)=d^v\circ d^h(c)=d^v(a-a'),\]
+so it follows that $d^v(a)=0$. We have established that $a\in\ker(d^v)$ and on the page $E^1_{\bullet,\bullet}$, $a=a-a'\in\im(d^h)$, so on the page $E^2_{\bullet,\bullet}$, $a=0$, hence $\phi$ is injective.
+
+For the remaining part of the required short exact sequence, consider
+\[\psi:H_{p+q}\ra E^2_{p,q}:(a,b)\ra b\]
