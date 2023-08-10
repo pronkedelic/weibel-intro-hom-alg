@@ -11,7 +11,7 @@
 }
 \end{xy}
 $T=\operatorname{Tot}(E)$ refers to the total complex of the zeroth page, with $d=d^h+d^v$ denoting its differential. Consider the linear map 
-\[\phi:E^2_{p-1,q+1}\ra H_{p+q}(T):a\mapsto(a,0).\]
+\[\phi:E^2_{p-1,q+1}\to H_{p+q}(T):a\mapsto(a,0).\]
 
 Suppose that $a\in E^0_{p-1,q+1}$ is in the same class as zero in $E^2_{p-1,q+1}$, i.e. $a\in\ker(d^v)$, $\exists a'\in\im(d^v)$ such that $a+a'\in d^h(\ker(d^v_{p,q+1}))$, because on the page $E^1_{\bullet,\bullet}$, $a=a+a'$ ends up in $\im(d^h_1)$.
 It now follows that there exists $b'\in E^0_{p-1,q+2}$ and $c\in\ker(d^v_{p,q+1})\subset E^0_{p,q+1}$ such that
@@ -23,4 +23,21 @@ Now, suppose that $\phi(a)=0$, then $(a,0)\in\im(d)$, so there exist $a'\in\im(d
 so it follows that $d^v(a)=0$. We have established that $a\in\ker(d^v)$ and on the page $E^1_{\bullet,\bullet}$, $a=a-a'\in\im(d^h)$, so on the page $E^2_{\bullet,\bullet}$, $a=0$, hence $\phi$ is injective.
 
 For the remaining part of the required short exact sequence, consider
-\[\psi:H_{p+q}\ra E^2_{p,q}:(a,b)\ra b\]
+\[\psi:H_{p+q}(T)\to E^2_{p,q}:(a,b)\to b.\]
+Let $(a,b)\in H_{p+q}(T)$ be in the same class as 0, then there exists $(r,s)\in E^0_{p-1,q+2}\oplus E^0_{p,q+1}=T_{p+q+1}$ such that $d^v(r)+d^h(s)=a$ and $d^v(s)=b$, so it's immediate that $\psi(a,b)=b$ is in $\im(d^v)$, hence $\psi(0)=0$, and $\psi$ is well-defined.
+
+It follows from previous results that for all $a\in E^2_{p-1,q+1}$, $\psi\circ\phi(a)=\psi(a,0)=0$, so $\im(\phi)\subset\ker(\psi)$. Conversely, suppose that $(a,b)\in\ker(\psi)$. Then $\psi(a,b)=b\in\im(d^v)$, so we can choose $c\in (d^v)^{-1}(b)$ such that
+\[(a,b)=(a,b)-d(0,c)=(a-d^h(c),b-d^v(c))=(a-d^h(c),b-b)\]
+\[=(a-d^h(c),0)\]
+as a class in $H_{p+q}(T)$, and conclude that $(a,b)\in\im(\phi)$. Therefore, $\im(\phi)=\ker(\psi)$.
+
+Lastly consider some arbitrary $b\in E^2_{p,q}$, then it is represented by some $b\in\ker(d^v)\subset E^0_{p,q}$ such that there exists some $b'\in\im(d^v)$ with $b+b'\in\ker(d^h)$. We now choose some $c'\in(d^v)^{-1}(b')\subset E^0_{p,q+1}$ and see that
+\[(-d^h(c'),b)=(-d^h(c'),b)+d(0,c')=(-d^h(c')+d^h(c'),b+d^v(c'))\]
+\[=(0,b+b')\]
+which satisfies
+\[d(-d^h(c'),b)=d(0,b+b')=(d^h(b+b'),d^v(b+b'))=(0,0),\]
+it follows that there exists a class in $H_{p+q}(T)\coloneqq\ker(d)/\im(d)$ that maps to $b$ under $\psi$, and $\psi$ must be surjective.
+
+Finally, we have shown that
+\[0\to E^2_{p-1,q+1}\xrightarrow{\phi}H_{p+q}(T)\xrightarrow{\psi}E^2_{p,q}\to0\]
+is exact.
