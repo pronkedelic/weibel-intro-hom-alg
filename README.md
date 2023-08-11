@@ -1,7 +1,6 @@
 # weibel-intro-hom-alg
  
-Solution manual to *An Introduction to Homological ALgebra* by Charles Weibel, 2nd edition
+Bootleg Solution manual to *An Introduction to Homological ALgebra* by Charles Weibel, 2nd edition
 
 # **Roster**
-## zin3724
-5.1.1, 5.1.2
+[Google sheet](https://docs.google.com/spreadsheets/d/17JKA5alX_HY1wLZmqBM6U_5ZXsknVaBe2JMWwSisBgg/edit?usp=sharing)
