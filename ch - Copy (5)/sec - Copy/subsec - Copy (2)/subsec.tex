@@ -1,1 +1,23 @@
-\subsection{}
+\subsection{zin3724}
+\subsubsection{}
+Suppose $x\in E^2_{p,q}$, then we can choose $y\in\ker d^1\subset E^1_{p,q}$ and $z\in\im d^1\subset E^1_{p,q}$ such that $y+z\equiv x$ in $E^2_{p,q}$. Now, we can choose $u_k,v_k\in\ker d^v\subset E_{p,q}$ and $u_i,v_i\in\im d^v\subset E_{p,q}$ so that $u_k+u_i\equiv y$ in $E^1_{p,q}$, and $v_k+v_i\equiv z$ in $E^1_{p,q}$. Since $d^1(y)=d^1(z)=0$, we have
+\[d^h(u_k+u_i+v_k+v_i)\in\im d^v\]
+so we can define $b\coloneqq u_k+u_i+v_k+v_i$, $b$ will satisfy $d^vb=0$, and we can choose an $a\in E_{p-1,q+1}$ so that $d^va=-d^hb$.
+
+If $x=0\in E^2_{p,q}$, then $x\equiv z$ in $E^2_{p,q}$ for some $z\in\im d^1\subset E^1_{p,q}$, so we can choose $w\in E^1_{p+1,q}$ such that $d^1(w)=z$. Now, we can choose $v_k,v_i$ as before, and $a'\in E_{p,q+1}$ and $b'\in E_{p+1,q}$ so that $(a',b')$ is a representative for $w$. Since $d^1(w)=z$ in $E^1_{p,q}$, we have $v_k\equiv d^hb'$ modulo $\im d^v$, so we can choose some $v_i'\in E_{p,q+1}$ such that
+\[d^v(v'_i)=v_k-d^hb'+v_i,\]
+we see that $(a,b)-(d^hv'_i,d^vv'_i)$ is of the form $(a'',0)+(0,-d^hb')$ for some $a''\in E_{p-1,q+1}$, with $b'$ satisfying $d^vb'=0$ by assumption. If we define $K$ to be the set
+\[\{(a,0),(d^hx,d^vx),(0,d^hc)| a\in E_{p-1,q+1}, x\in E_{p,q+1}, c\in E_{p+1,q}, d^vc=0\},\]
+we have just shown that $[0]\subset \lgl K\rgl$. Conversely, it's obvious that $\lgl K\rgl\subset[0]$, so it follows that $K$ generates the representatives of $0$ in $E^2_{p,q}$.
+\subsubsection{}
+Since $d^h(a)=0$, $(a,b)$ maps to $0$ in the $E_{p-2,q+1}$ component. By assumption, $d^v(a)=-d^h(b)$, so $(a,b)$ maps to $0$ in the $E_{p-1,q}$ component. It follows from the definition that $b\in\ker d^v$, so $(a,b)$ maps to $0$ in the $E_{p,q-1}$ component.
+\subsubsection{}
+To see that it maps representatives of $E^2_{p,q}$ to representatives of $E^2_{p-2,q+1}$, notice that $d(a,b)=(0,d^h(a))$, so $d^vd^h(a)=-d^vd^v(b)=0$, and $-d^hd^h(a)=0=d^v(0)$.
+
+The additivity of $d$ follows from the additivity of $d^h$.
+
+Now, we show that $d$ maps the generators of $[0]$ to $[0]$.
+\[d(0,d^hc)=(0,d^h(0))=(0,0)\]
+\[d(d^hx,d^vx)=(0,d^hd^hx)=(0,0)\]
+\[d(a,0)=(0,d^h(a))\]
+but since $d^v(a)=-d^h(b)=-d^h(0)=0$, $d(a,0)\equiv(0,0)$.
